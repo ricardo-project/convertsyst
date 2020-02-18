@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Converter Sistema</title>
+        <meta charset=UTF-8>
+        <link rel="shortcut icon" type="image/x-icon" href="https://rbxsoft.com/images/rbx-background-3.png">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    </head>
+    <body onload="option();">
+        <style>
+            body {
+                background: url('http://3.bp.blogspot.com/-DL-gb1ygYJI/UNT0A43zCQI/AAAAAAAAFmg/hyVBATrHn_8/s1600/Wallpaper+sistemas+Design+Fire.jpg') no-repeat top fixed;
+                background-size: cover;
+            } #conteudo {
+                width: 60%;
+                margin-left: 18.5%;
+                border-radius: 30px;
+                border: none;
+                background-color: brown;
+                box-shadow: black 5px 5px 4px;
+            } .inplist {
+                font-size: 20px;
+                border-radius: 5px;
+                box-shadow: black 3px 3px 3px;
+                font-family: Roboto;
+                color: maroon;
+                background-color:orange;
+            } .parag1 {
+                font-family: Raleway;
+                font-size: 20px;
+                color: white;
+            } .button1 {
+                font-size: 25px;
+                padding: 10px;
+                border-radius: 5px;
+                border: none;
+                background-color:saddlebrown;
+                color: white;
+                font-family: Raleway;
+                box-shadow: black 4px 4px 3px;
+            } .hrgen {
+                border: 5px solid maroon;
+                background-color: white;
+                border-radius: 10px;
+                box-shadow: black 4px 4px 3px;
+            } .texto {
+                width: 50%;
+                height: 200px;
+                border-radius: 15px;
+                padding-left: 8px;
+                padding-right: 8px;
+                box-shadow: black 5px 5px 4px;
+                font-family: Roboto;
+                background-color: white;
+                font-size: 20px;
+                text-align: justify;
+                border: 5px solid saddlebrown;
+                resize: none;
+            } .title {
+                font-family: Raleway;
+                text-align: center;
+                color: white;
+                font-size: 60px;
+                margin-bottom: 20px;
+                font-weight: bold;
+                text-shadow: black 3px 3px 3px;
+                margin-top: -10px;
+            }
+        </style>
+        <fieldset id=conteudo>
+        <form action="Converter Sistema.html">
+        <img src="https://image.flaticon.com/icons/svg/34/34476.svg" id=engren style="width: 40px; height: 40px" onclick="option()">
+            <p class=title>Converter Sistema</p>
+            <hr size=15 width=80% class=hrgen>
+            <p class=parag1>Inserir o sistema numérico do valor a inserir: <input type=text id=syst1 list=syst1list class=inplist> <input type=button value="Limpar Campo" onclick="limpar('syst1')" id=b0 class=button1 onmouseover="color('brown', id)" onmouseout="color('saddlebrown', id)" style="font-size: 15px; padding: 8px"> </p>
+                <datalist id=syst1list></datalist>
+            <p class=parag1>Inserir o respectivo valor: <input type=text id=num1 class=inplist style="background-color: white;"> <input type=button value="Limpar Valor individualmente" onclick="limpar('num1')" id=b1 class=button1 onmouseover="color('brown', id)" onmouseout="color('saddlebrown', id)" style="font-size: 15px; padding: 8px;"> </p>
+                <center> <input type=button value="Verificar Valor" onclick="obtvalor(true)" id=b2 class=button1 onmouseover="color('brown', id);" onmouseout="color('saddlebrown', id);"> &nbsp;
+                    <input type=reset value="Limpar Tudo" id=b3 class=button1 onmouseover="color('brown', id)" onmouseout="color('saddlebrown', id)" onclick="result.textContent = '';"> &nbsp;
+                    <input type=button value="Trocar Ordem dos Sistemas" id=b4 class=button1 onclick="obtvalor(false)" onmouseover="color('brown', id)" onmouseout="color('saddlebrown', id);"> </center>
+            <p class=parag1>Inserir o sistema numérico do respectivo resultado: <input type=text id=syst2 list=syst2list class=inplist> <input type=button value="Limpar Campo" onclick="limpar('syst2')" id=b5 class=button1 onmouseover="color('brown', id)" onmouseout="color('saddlebrown', id);" style="font-size: 15px; padding: 8px;"> </p>
+                <datalist id=syst2list></datalist>
+            <pre id=result class=parag1 style="font-size: 30px;"></pre>
+			<input type=button value="Copiar resultado para área de trabalho" id=bres class=button1 onmouseover="color('brown', id)" onmouseout="color('saddlebrown', id)" onclick="enviar('result', 'num1', true)" style="font-size: 15px; padding: 8px;">
+        </form> <form action="Converter Sistema.html">
+            <p class=title style="margin-top: 10px">Tradutor para Binário</p>
+                <center> <img src="http://www.calculoexato.net/wp-content/uploads/2018/01/codigo-bin%C3%A1rio.jpg" style="width: 60%; border-radius: 20px; box-shadow: black 5px 4px 4px"> </center>
+            <hr size=15 width=80% class=hrgen>
+            <p class=parag1>Digite abaixo um texto: </p>
+            <textarea class=texto id=textval style="margin-bottom: 8px; color: maroon; margin-top: -16px" placeholder="Escreva aqui uma frase, texto ou uma palavra"></textarea>
+                <center> <input type=button value="Verificar Texto em Binário" onclick="veriftext('textval', 'resultbin', true)" id=b6 class=button1 onmouseover="color('brown', id)" onmouseout="color('saddlebrown', id);"> &nbsp;
+                <input type=button value="Decodificar Texto do Binário" onclick="veriftext('textval', 'resultbin', false)" id=b7 class=button1 onmouseover="color('brown', id)" onmouseout="color('saddlebrown', id)"> &nbsp;
+                <input type=reset value="Limpar Tudo" id=b8 class=button1 onmouseover="color('brown', id);" onmouseout="color('saddlebrown', id)"> </center>
+            <textarea id=resultbin class=texto style="margin-top: 12px; background-color:darkgray; color: white" disabled placeholder="Confira aqui o resultado"></textarea> <br>
+            <input type=button value="Enviar Resultado para campo de entrada" id=b9 class=button1 onclick="enviar('resultbin', 'textval', false);" onmouseover="color('brown', id)" onmouseout="color('saddlebrown', id)" style="font-size: 15px; padding: 8px;">
+        </form>
+        </fieldset>
+    </body>
+</html>
+<script>
+    var condicao;
+    var condicao2 = true;
+    var dig = new Array();
+    var dig1 = new Array();
+        dig1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var letra = new Array();
+        letra = "aeinou";
+    var exp = new Array();
+        exp[0] = ["á", "â", "ä", "à", "ã"];
+        exp[1] = ["é", "ê", "ë", "è"];
+        exp[2] = ["í", "î", "ï", "ì"];
+        exp[3] = ["ñ"];
+        exp[4] = ["ó", "ô", "ö", "ò", "õ"];
+        exp[5] = ["ú", "û", "ü", "ù"];
+    var numvalue = new Array();
+        numvalue = "0123456789";
+    var digval = new Array();
+        digval[0] = new Array(); //Letras maiúsculas em código binário
+        digval[1] = new Array(); //Letras minúsculas em código binário
+    var numero = new Array();
+        numero[0] = "00110000";
+    for(var a = 0; a < dig1.length; a++) {
+        var rep = "";
+        var b = (a + 1);
+        do {
+            rep += b % 2;
+            b = Math.floor(b/2);
+        } while(b >= 1);
+        const limit = 5 - rep.length;
+        for(var k = 0; k < limit; k++) {
+            rep += "0";
+        } var final = "";
+        for(var x = 0; x < rep.length; x++) {
+            final += rep.charAt(rep.length - 1 - x);
+        } digval[0][a] = "010" + final;
+        digval[1][a] = "011" + final;
+        if(a <= 9) { numero[a + 1] = "0011" + final.substr(1); }
+    } var num = new Array();
+        num[0] = "Binário"; num[1] = "Terciário"; num[2] = "Quaternário"; num[3] = "Sistema de base 5"; num[4] = "Sistema de base 6";
+        num[5] = "Sistema de base 7"; num[6] = "Octal"; num[7] = "Sistema de base 9"; num[8] = "Decimal";
+        num[9] = "Sistema de base 11"; num[10] = "Sistema de base 12"; num[11] = "Sistema de base 13"; num[12] = "Sistema de base 14";
+        num[13] = "Sistema de base 15"; num[14] = "Hexadecimal";
+        for(var a = 15; a < 10 + dig1.length; a++) {
+            num[a] = "Sistema de base " + (a + 2);
+        }
+    for(var x = 0; x < num.length; x++) {
+        if(x < 10) { dig[x] = x; }
+        else if(x >= 10) { dig[x] = dig1[x - 10]; }
+    } for(var a = 1; a <= 2; a++) {
+        for(var b = 0; b < num.length - 1; b++) {
+            var element = document.createElement("option");
+            element.value = num[b];
+            document.getElementById("syst" + a + "list").appendChild(element);
+        }
+    } function obtvalor(value1) {
+        var syst = new Array();
+        for(var a = 0; a <= 1; a++) {
+            syst[a] = document.getElementById("syst" + (a + 1)).value;
+            if(syst[a] == "") {
+                alert("Você não inseriu um sistema numérico. Favor, verificar novamente o campo de entrada e inserir um para a execução do algoritmo!");
+                document.getElementById("syst" + (a + 1)).focus();
+                return;
+            }
+        } if(value1 == false) {
+            const var1 = syst[0];
+            const var2 = syst[1];
+            document.getElementById("syst1").value = var2;
+            document.getElementById("syst2").value = var1;
+            return;
+        } document.getElementById("num1").focus();
+        result.textContent = "";
+        var valor = document.getElementById("num1").value;
+        if(valor == "") {
+            alert("Você não inseriu nenhum valor para a respectiva conversão em outro sistema numérica. Favor, verificar novamente o campo de entrada e introduzi-lo!");
+            return;
+        } if(value1 == true) {
+            var syst2 = new Array();
+            for(var a = 0; a <= 1; a++) {
+                for(var b = 0; b < num.length; b++) {
+                    if(syst[a] == num[b]) {
+                        syst2[a] = (b + 2);
+                        break;
+                    }
+                }
+            } for(var a = 0; a < valor.length; a++) {
+                for(var b = syst2[0]; b < dig.length; b++) {
+                    if(valor.charAt(a).toUpperCase() == dig[b]) {
+                        document.getElementById("num1").value = "";
+                        alert("Você inseriu um dígito que não está incluído no respectivo sistema. Favor, verificar novamente o campo de entrada e inserir um valor que seja validado!");
+                        return; 
+                    }
+                }
+            } if(syst2[0] == syst2[1]) {
+                alert("Os sistemas numéricos selecionados são equivalentes. Favor, verifique um sistema diferente para que o valor possa ser convertido!");
+                for(var a = 1; a <= 2; a++) { document.getElementById("syst" + a).value = ""; }
+            } else if(syst2[0] !== syst2[1]) {
+                var decim = 0;
+                var total = "";
+                var final = ""; 
+                for(var a = 0; a < valor.length; a++) {
+                    for(var b = 0; b < dig.length; b++) {
+                        if(valor.charAt(a).toUpperCase() == dig[b]) {
+                            decim += b*Math.pow(syst2[0], (valor.length - 1 - a));
+                        }
+                    }
+                } do {
+                    total += dig[decim % syst2[1]];
+                    decim = Math.floor(decim/syst2[1]);
+                } while(decim >= 1); 
+                for(var a = total.length - 1; a >= 0; a--) {
+                    final += total.charAt(a);
+                } result.textContent = final; 
+                if(condicao == false) {
+                    document.getElementById("num1").value = "";
+                }
+            }
+        }
+    } function option() {
+        var cond = confirm("Você deseja manter o valor inserido na caixa de entrada abaixo após a execução da conversão, ou que seja limpo automaticamente durante a execução?\n     - Caso deseja manter o valor, clique em 'OK'\n     - Caso deseja limpar automaticamente, clique em 'Cancelar'");
+        if(cond == true) {
+            condicao = true;
+        } else if(cond == false) {
+            condicao = false;
+        }
+    } function limpar(newid) {
+        document.getElementById(newid).value = "";
+        document.getElementById(newid).focus();
+    } function color(newcolor, newid) {
+        document.getElementById(newid).style.backgroundColor = newcolor;
+    } function veriftext(newid, newid2, value1) {
+        var text = document.getElementById(newid).value;
+        if(text == "") {
+            alert("O campo está vazio. Favor, verificar novamente o campo de entrada e inserir um dado válido!");
+            document.getElementById(newid).focus();
+            return;
+        } var result2 = "";
+        if(value1 == true) {
+            var result = "";
+            for(var a = 0; a < text.length; a++) {
+                var const1 = "";
+                for(var b = 0; b < exp.length; b++) {
+                    for(var h = 0; h < exp[b].length; h++) {
+                        if(text.charAt(a) == exp[b][h].toLowerCase()) {
+                            const1 = letra[b].toLowerCase();
+                            break;
+                        } else if(text.charAt(a) == exp[b][h].toUpperCase()) {
+                            const1 = letra[b].toUpperCase();
+                            break;
+                        }
+                    }
+                } for(var b = 0; b < dig1.length; b++) {
+                    if(text.charAt(a) == dig1[b].toUpperCase() || const1 == dig1[b].toUpperCase()) {
+                        result += digval[0][b] + " ";
+                        break;
+                    } else if(text.charAt(a) == dig1[b].toLowerCase() || const1 == dig1[b].toLowerCase()) {
+                        result += digval[1][b] + " ";
+                        break;
+                    }
+                } for(var b = 0; b < numero.length; b++) {
+                    if(text.charAt(a) == numvalue[b]) {
+                        result += numero[b] + " ";
+                        break;
+                    }
+                } if(text.charAt(a) == " ") {
+                    result += "00100000 ";
+                }
+            } for(var a = 0; a < result.length - 1; a++) {
+                result2 += result.charAt(a);
+            } if(result2 == "") {
+                alert("Você não inseriu nenhum caractere válido, ou que possa ser representado em código binário. Verificar novamente o campo de entrada e inserir um dado válido!");
+                document.getElementById(newid).value = "";
+                document.getElementById(newid).focus();
+            }
+        } else if(value1 == false) {
+            var id = 0;
+            var conj = new Array();
+                conj[0] = "";
+            for(var a = 0; a < text.length; a++) {
+                var ind = false;
+                if(text.charAt(a) == "0" || text.charAt(a) == "1") {
+                    conj[id] += text.charAt(a);
+                    ind = true;
+                } if(text.charAt(a) == " ") {
+                    ind = true;  
+                } if(ind == false) {
+                    alert("Você inseriu algum caractere indevido abaixo. Favor, verificar novamente a caixa de entrada, e inserir um dado válido!");
+                    document.getElementById(newid).value = "";
+                    document.getElementById(newid).focus();
+                    return;
+                } if(a == text.length - 1 && conj[id].length !== 8 && condicao2 == true) {
+                    var conf = confirm("A quantidade de elementos '0' e '1' existentes na frase inserida no respectivo campo NÃO é um múltiplo de 8. Portanto, o algoritmo só decodificou aquelas validadas!\n     Deseja visualizar esta mensagem novamente?\n     - Se sim, clique em 'OK'!\n     - Caso não queira, clique em 'Cancelar'!");
+                    if(conf == false) { condicao2 = false; }
+                } if(conj[id].length == 8) {
+                    id++;
+                    conj[id] = "";
+                }
+            } for(var h = 0; h < id; h++) {
+                var cond = false;
+                for(var k = 0; k < dig1.length; k++) {
+                    if(conj[h] == digval[0][k]) {
+                        result2 += dig1[k].toUpperCase();
+                        cond = true; break;
+                    } else if(conj[h] == digval[1][k]) {
+                        result2 += dig1[k].toLowerCase();
+                        cond = true; break;
+                    } else if(h < numero.length && conj[h] == numero[k]) {
+                        result2 += k;
+                        cond = true; break;
+                    }
+                } if(conj[h] == "00100000") {
+                    result2 += " ";
+                    cond = true;
+                } if(cond == false) {
+                    result2 += "?";
+                }
+            }
+        } document.getElementById(newid2).value = result2;
+    } var mensagem1 = "Não há nenhum valor no campo de saída para ser copiado novamente ao campo de entrada!";
+	function enviar(oldid, newid, newcond) {
+        oldvar = document.getElementById(oldid);
+		if(newcond == true) {
+			if(oldvar.textContent == "") {
+				alert(mensagem1);
+			} else if(oldvar.textContent !== "") {
+				document.getElementById(newid).value = oldvar.textContent;
+				oldvar.textContent = "";
+			}
+		} else if(newcond == false) {
+			if(oldvar.value == "") {
+				alert(mensagem1);
+			} else if(oldvar.value !== "") {
+				document.getElementById(newid).value = oldvar.value;
+				oldvar.value = "";
+			}
+		} document.getElementById(newid).focus();
+    }
+</script>
